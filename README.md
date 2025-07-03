@@ -10,7 +10,7 @@ List of Matlab Scripts:
 **MODEL EVALUATION**
 
 CROCO_SUM_MLD.m
-CROCOvsOPS.m
+CROCOvsOBS.m
 getvarANIM.m
 init_pos.m
 
