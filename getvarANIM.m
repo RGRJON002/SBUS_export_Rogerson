@@ -32,13 +32,13 @@ Yorig = 2000;
 %%%%%%%%%
 
 % Once-off gridding data and dimensions
-file = strcat(CROCO_path,'/','avg_Y',string(Ymin),'M',string(6),'.nc');
+file = strcat(CROCO_path,'/','avg_Y',string(Ymin),'M',string(1),'.nc');
 % Read in the mask
 mask=ncread(file,'mask_rho');
 mask(mask==0)=nan;
 % Define my region, will focus on the coastal domain
-CROCO_lat=ncread(strcat(CROCO_path,'/','diabio_avg_Y',string(Ymin),'M',string(6),'.nc'),'lat_rho');
-CROCO_lon=ncread(strcat(CROCO_path,'/','diabio_avg_Y',string(Ymin),'M',string(6),'.nc'),'lon_rho');
+CROCO_lat=ncread(strcat(CROCO_path,'/','diabio_avg_Y',string(Ymin),'M',string(1),'.nc'),'lat_rho');
+CROCO_lon=ncread(strcat(CROCO_path,'/','diabio_avg_Y',string(Ymin),'M',string(1),'.nc'),'lon_rho');
 CROCO_top = ncread(file,'h');
 
 var = ncread(file,'CHLA');
