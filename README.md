@@ -113,5 +113,5 @@ Although developed for the Southern Benguela Upwelling System (SBUS), the script
 
 If you use these scripts in published work, please cite:
 
-> Rogerson, J., Vichi, M., et al.
+> Rogerson, J. & Vichi, M.,.
 > *Carbon transport across the Cape Point Jet in the Southern Benguela Upwelling System.*
