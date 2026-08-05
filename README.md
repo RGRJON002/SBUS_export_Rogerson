@@ -1,30 +1,28 @@
 # SBUS_export_Rogerson
-Series of scripts used to generate the figures and metrics in "Implications of coastal upwelling in the Southern Benguela Upwelling System on carbon export in the South Atlantic"
+Series of  matlab scripts used to sample Eulerian tracer fields from CROCO along Lagrangian particle trajectories from ROFF. Forms part of the work for the paper: 'Carbon transport across the Cape Point Jet in the Southern Benguela Upwelling System'.
 
-The MATLAB scripts call several external packages:
+The MATLAB scripts call the CROCO processing tools:
 
-(1) Thyng, K.M., C.A. Greene, R.D. Hetland, H.M. Zimmerle, and S.F. DiMarco. 2016. True colors of oceanography: Guidelines for effective and accurate colormap selection. Oceanography 29(3):9–13. http://dx.doi.org/10.5670/oceanog.2016.66
-
-(2) CROCO_TOOLS: refer to Penven et al. (2008) or download from https://www.croco-ocean.org/download/
+(1) CROCO_TOOLS: refer to Penven et al. (2008) or download from https://www.croco-ocean.org/download/
 
 List of Matlab Scripts:
 
-**MODEL EVALUATION**
+**Eulerian filed extraction**
 
-CROCO_SUM_MLD.m <br>
-CROCOvsOBS.m <br>
-getvarANIM.m <br>
-init_pos.m <br>
+NPZD_get_flux_slice_V2.m <br>
+NPZD_get_tracer_slice.m <br>
 
-**AGE TRACER**
-
-agetovar.m <br>
+**Lagrangian sampling**
+TRACK_PARTICLE.m <br>
 AGE_TRACER.m <br>
-age_track.m <br>
 FU3D.m <br>
-mll2grid.m <br>
-NPZD_flux_slice_V2.m <br>
-NPZD_tracer_slice.m <br>
-open_ocean.m <br>
-Regression_plots.m <br>
-spheric_dist.m <br>
+FUtime.m <br>
+Fto3D.m <br>
+age_statistics.m <br>
+mask_by_age.m <br>
+sample_croco.m <br>
+
+**Usage**
+These scripts are fairly generic, and should work with other CROCO/ROMS outputs. Top extract a desired tracer field: edit and run NPZD_get_tracer_slice.m or if you want a flux across a depth interface use NPZD_get_flux_slice_V2.m. Both will create a series of .mat files which will be used by the later scripts.
+
+With the desired Eulerian tracer fields extracted, they are horizontally sampled along the backwards Lagrangian trajectories produced by ROFF. The main script is TRACK_PARTICLE.m. It leverages all of the functions to sample the Eulerian fields and produces a data structure which is saved to a .mat file. This .mat contains all the data required for plotting and further analysis.   
